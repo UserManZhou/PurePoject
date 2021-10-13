@@ -1,14 +1,14 @@
 <template>
     <div>
       <div v-for="(item,index) in note" :key="index">
-        <div class="box" v-if="item.createtime >= createtime">
+        <div class="box" v-if="Math.abs(createtime.getDay() - item.createtime.getDay()) >= 3">
           <article class="media" >
             <div class="media-content"  >
               <div class="content" >
                 <p>
                   <strong>{{item.title}}</strong> <small>{{item.context}}</small> <small>{{item.summary}}</small>
                   <br>
-                  <span>{{item.createtime}}</span>
+                  <span >{{item.createtime.toLocaleDateString()}}</span>
                 </p>
               </div>
               <nav class="level is-mobile">
@@ -39,15 +39,22 @@
 
 <script>
 import request from "network/request";
-import moment from 'moment';
+/*import moment from 'moment';*/
 export default {
   name: "SidebarBody",
   data(){
     return{
       note:request({url:"vue-note/findNote"},success =>{
+        for (let i = 0; i < success.data.length; i++) {
+           success.data[i].createtime = new Date(success.data[i].createtime)
+
+        }
         this.note = success.data
-      }),
-      createtime:moment(new Date()).format('yyyy-MM-DD')
+        console.log(this.note[0].createtime)
+        /*Math.abs(createdate.getDay()-date.getDay())*/
+      },error => {console.log(error)}),
+    /*  createtime:moment(new Date()).format('yyyy-MM-DD')*/
+      createtime: new Date()
     }
   },
 /*  computed:{

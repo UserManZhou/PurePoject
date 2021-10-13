@@ -7,6 +7,10 @@ const Note =()=>import('views/home/note/Note')
 const SidebarBody = ()=> import('views/body/sidebar/SidebarBody')
 const NewSidebarBody = () => import('views/body/sidebar/NewSidebarBody')
 const TotalNote = () => import('views/body/sidebar/TotalNote')
+const NovelRead = () => import('views/body/novel/NovelRead')
+const NovelBooks = () => import('views/body/novel/NovelBooks')
+const CultureNovel = () => import('views/body/novel/CultureNovel')
+const NovelReadFoot = () => import('views/body/novel/foot/NovelReadFoot')
 Vue.use(VueRouter)
 
 const routes = [
@@ -16,7 +20,31 @@ const routes = [
   },
   {
     path: '/novel',
-    component:Novel
+    component:Novel,
+    children: [
+      {
+        path:'/novelRead',
+        component:NovelRead,
+        children:[
+          {
+            path:'/novelReadFoot',
+            component:NovelReadFoot
+          }
+        ]
+      },
+      {
+        path:'/novelBooks',
+        component:NovelBooks
+      },
+      {
+        path:'/',
+        redirect: '/novelRead'
+      },
+      {
+        path:'/cultureNovel',
+        component:CultureNovel
+      }
+    ]
   },
   {
     path:'/note',

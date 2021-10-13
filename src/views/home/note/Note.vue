@@ -9,7 +9,7 @@
    </div>
    <div slot="right" class="top"><i class="bi bi-justify" ></i></div>
  </page-head>-->
- <page-head>
+ <page-head class="has-background-primary">
    <div slot="left" class="sidebar">
      Note
    </div>

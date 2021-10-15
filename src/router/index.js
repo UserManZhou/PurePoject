@@ -1,40 +1,57 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from "../views/home/Home";
-const Person = ()=> import('views/home/person/Person')
-const Novel = () => import('views/home/novel/Novel')
-const Note =()=>import('views/home/note/Note')
-const SidebarBody = ()=> import('views/body/sidebar/SidebarBody')
-const NewSidebarBody = () => import('views/body/sidebar/NewSidebarBody')
-const TotalNote = () => import('views/body/sidebar/TotalNote')
-const NovelRead = () => import('views/body/novel/NovelRead')
-const NovelBooks = () => import('views/body/novel/NovelBooks')
-const CultureNovel = () => import('views/body/novel/CultureNovel')
-const NovelReadFoot = () => import('views/body/novel/foot/NovelReadFoot')
+
+import {data} from "assets/routerJs/RouterJs";
 Vue.use(VueRouter)
 
 const routes = [
   {
     path:'/person',
-    component:Person
+    component: data.Person
   },
   {
     path: '/novel',
-    component:Novel,
+    component:data.Novel,
     children: [
       {
         path:'/novelRead',
-        component:NovelRead,
+        component:data.NovelRead,
         children:[
           {
             path:'/novelReadFoot',
-            component:NovelReadFoot
+            component:data.NovelReadFoot
+          },
+          {
+            path:'/novelRead_Foot',
+            component:data.NovelRead_Foot
+          },
+          {
+            path:'/novelRead__Foot',
+            component: data.Novel__Foot
+          },
+          {
+            path:'/novelRead___Foot',
+            component: data.NovelRead___Foot
+          },
+          {
+            path:'/novelRead____Foot',
+            component: data.NovelRead____Foot
+          },
+          {
+            path:'/',
+            redirect:'/novelReadFoot'
           }
         ]
       },
       {
         path:'/novelBooks',
-        component:NovelBooks
+        component:data.NovelBooks,
+        children:[
+          {
+            path:'/novelBookFoot',
+            component:data.NovelBookFoot
+          }
+        ]
       },
       {
         path:'/',
@@ -42,17 +59,17 @@ const routes = [
       },
       {
         path:'/cultureNovel',
-        component:CultureNovel
+        component:data.CultureNovel
       }
     ]
   },
   {
     path:'/note',
-    component:Note,
+    component:data.Note,
     children:[
       {
         path:'/sidebar',
-        component:SidebarBody
+        component:data.SidebarBody
       },
       {
         path: '/',
@@ -60,17 +77,17 @@ const routes = [
       },
       {
         path:'/newsidebar',
-        component:NewSidebarBody
+        component:data.NewSidebarBody
       },
       {
         path:'/totalNote',
-        component:TotalNote
+        component:data.TotalNote
       }
     ]
   },
   {
     path:'/home',
-    component:Home
+    component:data.Home
   },
   {
     path: '/',

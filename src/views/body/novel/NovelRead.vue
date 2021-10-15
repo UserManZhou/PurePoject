@@ -28,16 +28,16 @@ export default {
       this.link = "/novelReadFoot"
     },
     btnClick2(){
-      this.link = "sss2"
+      this.link = "/novelRead_Foot"
     },
     btnClick3(){
-      this.link = "sss3"
+      this.link = "/novelRead__Foot"
     },
     btnClick4(){
-      this.link = 'sss4'
+      this.link = '/novelRead___Foot'
     },
     btnClick5(){
-      this.link = "sss5"
+      this.link = "/novelRead____Foot"
     }
   }
 }

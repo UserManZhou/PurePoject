@@ -1,0 +1,18 @@
+export const data = {
+   Home : () => import("views/home/Home"),
+   Person :  ()=> import('views/home/person/Person'),
+   Novel : () => import('views/home/novel/Novel'),
+   Note : ()=>import('views/home/note/Note'),
+   SidebarBody : ()=> import('views/body/sidebar/SidebarBody'),
+   NewSidebarBody : () => import('views/body/sidebar/NewSidebarBody'),
+   TotalNote : () => import('views/body/sidebar/TotalNote'),
+   NovelRead : () => import('views/body/novel/NovelRead'),
+   NovelReadFoot : () => import('views/body/novel/foot/novelRead/NovelReadFoot'),
+   NovelRead_Foot : () => import('views/body/novel/foot/novelRead/NovelRead_Foot'),
+   Novel__Foot : () => import('views/body/novel/foot/novelRead/NovelRead__Foot'),
+   NovelRead___Foot : () => import('views/body/novel/foot/novelRead/NovelRead___Foot'),
+   NovelRead____Foot : () => import('views/body/novel/foot/novelRead/NovelRead____Foot'),
+   NovelBooks : () => import('views/body/novel/NovelBooks'),
+   NovelBookFoot : () => import("views/body/novel/foot/novelBooks/NovelBookFoot"),
+   CultureNovel : () => import('views/body/novel/CultureNovel'),
+}

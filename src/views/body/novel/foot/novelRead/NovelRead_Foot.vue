@@ -49,7 +49,7 @@ export default {
   name: "NovelRead_Foot",
   data(){
     return{
-      novel:request({url:'vue-novel/findNovelOriental'},success => this.novel = success.data)
+      novel:request({url:'vue-novel/findNovel/Oriental'},success => this.novel = success.data)
     }
   }
 }

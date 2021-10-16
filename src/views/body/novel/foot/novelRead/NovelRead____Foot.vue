@@ -48,7 +48,7 @@ export default {
   name: "NovelRead____Foot",
   data(){
     return{
-      novel:request({url:'vue-novel/findNovelMagicSchool'},success => this.novel = success.data)
+      novel:request({url:'vue-novel/findNovel/MagicSchool'},success => this.novel = success.data)
     }
   }
 }

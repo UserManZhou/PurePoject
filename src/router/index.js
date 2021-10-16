@@ -50,6 +50,26 @@ const routes = [
           {
             path:'/novelBookFoot',
             component:data.NovelBookFoot
+          },
+          {
+            path:'/novelBook_Foot',
+            component: data.NovelBook_Foot
+          },
+          {
+            path:'/novelBook__Foot',
+            component: data.NovelBook__Foot
+          },
+          {
+            path:'/novelBook___Foot',
+            component: data.NovelBook___Foot
+          },
+          {
+            path:'/novelBook____Foot',
+            component: data.NovelBook____Foot
+          },
+          {
+            path:'/',
+            redirect:'/novelBookFoot'
           }
         ]
       },
@@ -59,7 +79,42 @@ const routes = [
       },
       {
         path:'/cultureNovel',
-        component:data.CultureNovel
+        component:data.CultureNovel,
+        children:[
+          {
+            path:'/cultureNovelFoot',
+            component:data.CultureNovelFoot
+
+          },
+          {
+            path:'/cultureNovel_Foot',
+            component: data.CultureNovel_Foot
+          },
+          {
+            path:'/cultureNovel__Foot',
+            component: data.CultureNovel__Foot
+          },
+          {
+            path:'/cultureNovel___Foot',
+            component: data.CultureNovel___Foot
+          },
+          {
+            path:'/cultureNovel____Foot',
+            component: data.CultureNovel____Foot
+          },
+          {
+            path:'/cultureNovel_____Foot',
+            component: data.CultureNovel_____Foot
+          },
+          {
+            path:'/cultureNovel______Foot',
+            component: data.CultureNovel______Foot
+          },
+          {
+            path:'/',
+            redirect:'/cultureNovelFoot'
+          }
+        ]
       }
     ]
   },

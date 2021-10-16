@@ -48,7 +48,7 @@ export default {
   name: "NovelRead__Foot",
   data(){
     return{
-      novel:request({url:'vue-novel/findNovelReincarnation'},success => this.novel = success.data)
+      novel:request({url:'vue-novel/findNovel/Reincarnation'},success => this.novel = success.data)
     }
   }
 }

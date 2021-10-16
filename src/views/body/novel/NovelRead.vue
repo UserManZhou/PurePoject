@@ -1,11 +1,11 @@
 <template>
   <div class="novleRead">
    <novel-foot :link="link">
-     <button class="button is-primary is-inverted has-text-black" @click="btnClick">变身情缘</button>
-     <button class="button is-primary is-inverted has-text-black" @click="btnClick2">东方玄幻</button>
-     <button class="button is-primary is-inverted has-text-black" @click="btnClick3">转世重生</button>
-     <button class="button is-primary is-inverted has-text-black" @click="btnClick4">上古神话</button>
-     <button class="button is-primary is-inverted has-text-black" @click="btnClick5">魔法校园</button>
+     <button class="button is-primary is-inverted has-text-black" @click="btnClick('/novelReadFoot')">变身情缘</button>
+     <button class="button is-primary is-inverted has-text-black" @click="btnClick('/novelRead_Foot')">东方玄幻</button>
+     <button class="button is-primary is-inverted has-text-black" @click="btnClick('/novelRead__Foot')">转世重生</button>
+     <button class="button is-primary is-inverted has-text-black" @click="btnClick('/novelRead___Foot')">上古神话</button>
+     <button class="button is-primary is-inverted has-text-black" @click="btnClick('/novelRead____Foot')">魔法校园</button>
    </novel-foot>
     <router-view></router-view>
   </div>
@@ -24,20 +24,8 @@ export default {
     }
   },
   methods:{
-    btnClick(){
-      this.link = "/novelReadFoot"
-    },
-    btnClick2(){
-      this.link = "/novelRead_Foot"
-    },
-    btnClick3(){
-      this.link = "/novelRead__Foot"
-    },
-    btnClick4(){
-      this.link = '/novelRead___Foot'
-    },
-    btnClick5(){
-      this.link = "/novelRead____Foot"
+    btnClick(str){
+      this.link = str
     }
   }
 }

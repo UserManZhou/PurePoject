@@ -5,7 +5,7 @@
         <article class="media">
           <div class="media-left">
             <figure class="image is-64x64">
-              <img  v-bind:src="require('@/assets/img/novel/'+item.img)" alt="Image">
+              <img  v-bind:src="require('@/assets/img/book/'+item.img)" alt="Image">
             </figure>
           </div>
           <div class="media-content">
@@ -48,7 +48,7 @@ export default {
   name: "NovelBookFoot",
   data(){
     return{
-      book:request({url:'vue-novel/findNovelMagicSchool'},success => this.novel = success.data)
+      book:request({url:'vue-novel/findNovel/swordsman'},success => this.book = success.data)
     }
   }
 }

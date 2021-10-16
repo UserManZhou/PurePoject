@@ -49,7 +49,7 @@ export default {
   name: "NovelReadFoot",
   data(){
     return{
-      novel: request({url:'vue-novel/findNovelLove'},success => {
+      novel: request({url:'vue-novel/findNovel/Love'},success => {
         this.novel = success.data
       }),
     }
